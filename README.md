@@ -3,6 +3,7 @@
 A website based on a client project, built using Next.js and Contentful CMS. 
 
 ### Features
+- Responsive menus.
 - Customizable homepage with dynamic content using Contentful CMS
 - Gallery page to showcase hairstyles with custom built lightbox.
 - Contact page

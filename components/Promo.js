@@ -4,7 +4,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export default function Promo({ promo }) {
 	const { title, images, description } = promo.fields;
-
 	return (
 		<div className='promo'>
 			<div className='promo__caption'>

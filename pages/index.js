@@ -12,13 +12,13 @@ export async function getStaticProps() {
 	});
 
 	const promo = await client.getEntries({
-		content_type: 'promo',
+		content_type: 'promoList',
 	});
-	const testimonial = await client.getEntries({ content_type: 'testimonial' });
+	/* const testimonial = await client.getEntries({ content_type: 'testimonial' }); */
 
 	return {
 		props: {
-			testimonials: testimonial.items,
+			/* testimonials: testimonial.items, */
 			promo: promo.items,
 		},
 		revalidate: 1,
@@ -26,16 +26,19 @@ export async function getStaticProps() {
 }
 
 export default function homePage({ testimonials, promo }) {
+	console.log(promo)
 	return (
 		<>
-			{/* <Head>
+			<Head>
 				<title>Next Salon | Home</title>
-			</Head> */}
+			</Head>
 
 			<div className='home-page'>
-				{promo.map((promo) => (
+				{/* {promo.map((promo) => (
 					<Promo key={promo.sys.id} promo={promo} />
-				))}
+				))} */}
+				<Promo promo={promo[0]} />
+				
 				<section className='grid testimonials'>
 					<div className='wrapper wrapper--sec-header'>
 						<div className='section-header'>
@@ -79,12 +82,12 @@ export default function homePage({ testimonials, promo }) {
 									// },
 								},
 							}}>
-							{testimonials.map((testimonial) => (
+							{/* {testimonials.map((testimonial) => (
 								<Testimonial
 									key={testimonial.sys.id}
 									testimonial={testimonial}
 								/>
-							))}
+							))} */}
 						</Splide>
 					</div>
 				</section>
